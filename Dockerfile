@@ -3,6 +3,7 @@ RUN go get github.com/codegangsta/negroni \
            github.com/gorilla/mux \
            github.com/xyproto/simpleredis
 WORKDIR /app
+RUN git clone github.com/kubernetes/examples/tree/master/guestbook-go/public
 ADD ./main.go .
 RUN CGO_ENABLED=0 GOOS=linux go build -o main .
 
