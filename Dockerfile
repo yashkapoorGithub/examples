@@ -10,9 +10,6 @@ WORKDIR /app
 # Clone the repository
 RUN git clone github.com/kubernetes/examples/tree/master/guestbook-go/public
 
-# Build the main.go file
-ADD ./main.go .
-RUN CGO_ENABLED=0 GOOS=linux go build -o main .
 
 FROM scratch
 
