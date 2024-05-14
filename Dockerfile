@@ -19,14 +19,6 @@ FROM scratch
 # Set the working directory
 WORKDIR /app
 
-# Copy the main executable from the builder stage
-COPY --from=builder /app/main .
-
-# Copy files from the cloned repository
-COPY --from=builder /tmp/public/index.html public/index.html
-COPY --from=builder /tmp/public/script.js public/script.js
-COPY --from=builder /tmp/public/style.css public/style.css
-
 # Define the command to run the main executable
 CMD ["/app/main"]
 
