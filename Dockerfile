@@ -13,9 +13,6 @@ RUN git clone github.com/kubernetes/examples/tree/master/guestbook-go/public
 
 FROM scratch
 
-# Set the working directory
-WORKDIR /app
-
 # Define the command to run the main executable
 CMD ["/app/main"]
 
